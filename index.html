@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruthTrack AI | Stale Answer Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">TRUTHTRACK <span>AI</span></div>
+    <div class="nav-tag">AI ANSWER VERIFICATION</div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <span class="tag">INTELLIGENT FACT CHECKING</span>
+        <h1>Is Your AI Answer <span>Still True?</span></h1>
+        <p>
+            Detect outdated information in AI-generated answers
+            using live web research and AI-powered verification.
+        </p>
+    </section>
+
+    <section class="input-card">
+        <div class="section-heading">
+            <h2>Verify Your Answer</h2>
+            <span class="live"><span></span> Live verification</span>
+        </div>
+
+        <label for="answer">Paste your AI-generated answer</label>
+
+        <textarea id="answer"
+            placeholder="Example: The latest version of Python is Python 3.11. It was released in 2022..."
+            maxlength="10000"></textarea>
+
+        <div class="input-footer">
+            <span id="charCount">0 / 10000 characters</span>
+            <button id="verifyBtn" onclick="verifyAnswer()">
+                Verify Answer →
+            </button>
+        </div>
+    </section>
+
+    <section id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <h3>Analyzing your answer...</h3>
+        <p>Extracting claims and checking live web sources.</p>
+    </section>
+
+    <section id="error" class="error hidden"></section>
+
+    <section id="results" class="results hidden">
+
+        <h2>Verification Results</h2>
+
+        <div class="score-card">
+            <div>
+                <p>Overall Freshness Score</p>
+                <h1 id="score">--</h1>
+                <span>Evidence-based indicator / 100</span>
+            </div>
+            <div id="scoreStatus" class="score-status">Analyzed</div>
+        </div>
+
+        <div class="summary-grid">
+            <div class="summary-box">
+                <span id="supported">0</span>
+                <p>Supported</p>
+            </div>
+            <div class="summary-box">
+                <span id="stale">0</span>
+                <p>Potentially stale</p>
+            </div>
+            <div class="summary-box">
+                <span id="contradicted">0</span>
+                <p>Contradicted</p>
+            </div>
+            <div class="summary-box">
+                <span id="unverified">0</span>
+                <p>Unverified</p>
+            </div>
+        </div>
+
+        <h3 class="claim-heading">Claim-by-Claim Analysis</h3>
+
+        <div id="claimList"></div>
+
+        <div class="updated-card">
+            <h3>AI Verification Summary</h3>
+            <p id="summary"></p>
+        </div>
+
+    </section>
+
+    <section class="features">
+        <h2>How TruthTrack Works</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <h3>01. Extract</h3>
+                <p>Identify individual factual claims.</p>
+            </div>
+            <div class="feature">
+                <h3>02. Research</h3>
+                <p>Find current information using Tavily.</p>
+            </div>
+            <div class="feature">
+                <h3>03. Verify</h3>
+                <p>Compare claims against live evidence.</p>
+            </div>
+            <div class="feature">
+                <h3>04. Report</h3>
+                <p>Display freshness scores and sources.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 TruthTrack AI | Built by Team TechNova</p>
+    <p>AI-powered verification. Evidence-backed decisions.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
